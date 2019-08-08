@@ -3,10 +3,7 @@ package test;
 import binarytree.BinarySearchTree;
 import binarytree.TreeNode;
 import heap.Heap;
-import sort.BubbleSort;
-import sort.BucketSort;
-import sort.InsertSort;
-import sort.SelectSort;
+import sort.*;
 
 /**
  * 〈一句话功能简述〉:
@@ -34,40 +31,50 @@ public class TestClass {
 
         //testInsertSort();
 
-        int[] arr={5,9,6,3,7,1,8,16,0};
-        BucketSort.sort(arr,16);
-        for (int i = 0; i <arr.length ; i++) {
-            System.out.print(arr[i]+"\t");
+        //testBucketSort();
+
+        int[] arr = {5, 9, 6, 3, 7, 7, 7, 1, 8, 16, 0};
+        QiuckSort.sort(arr, 0, arr.length - 1);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "\t");
         }
 
     }
 
+    private static void testBucketSort() {
+        int[] arr = {5, 9, 6, 3, 7, 1, 8, 16, 0};
+        BucketSort.sort(arr, 16);
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "\t");
+        }
+    }
+
     private static void testInsertSort() {
-        int[] arr={5,9,6,3,7,1,8,16,0};
+        int[] arr = {5, 9, 6, 3, 7, 1, 8, 16, 0};
         InsertSort.sort(arr);
-        for (int i = 0; i <arr.length ; i++) {
-            System.out.print(arr[i]+"\t");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "\t");
         }
     }
 
     private static void testSelectSort() {
-        int[] arr={5,9,6,3,7,1,8,16};
+        int[] arr = {5, 9, 6, 3, 7, 1, 8, 16};
         SelectSort.sort(arr);
-        for (int i = 0; i <arr.length ; i++) {
-            System.out.print(arr[i]+"\t");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "\t");
         }
     }
 
     private static void testBubbleSort() {
-        int[] arr={5,9,6,3,7,1,8,16};
+        int[] arr = {5, 9, 6, 3, 7, 1, 8, 16};
         BubbleSort.sort(arr);
-        for (int i = 0; i <arr.length ; i++) {
-            System.out.print(arr[i]+"\t");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + "\t");
         }
     }
 
     private static void testHeap() {
-        Heap heap=new Heap();
+        Heap heap = new Heap();
         heap.insert(4);
         heap.insert(5);
         heap.insert(2);
@@ -91,11 +98,11 @@ public class TestClass {
     }
 
     private static void testRemove(TreeNode root) {
-        System.out.println(BinarySearchTree.remove(7,root));
+        System.out.println(BinarySearchTree.remove(7, root));
     }
 
     private static void testInsert(TreeNode root) {
-        System.out.println(BinarySearchTree.insert(9,root));
+        System.out.println(BinarySearchTree.insert(9, root));
     }
 
     private static void testFindMax(TreeNode root) {
@@ -107,7 +114,7 @@ public class TestClass {
     }
 
     private static void testContains(TreeNode root) {
-        System.out.println(BinarySearchTree.contains(6,root));
+        System.out.println(BinarySearchTree.contains(6, root));
     }
 
     private static TreeNode init() {

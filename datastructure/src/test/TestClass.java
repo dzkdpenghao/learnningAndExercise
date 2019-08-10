@@ -33,12 +33,16 @@ public class TestClass {
 
         //testBucketSort();
 
+        //testShellSort();
+
+    }
+
+    private static void testShellSort() {
         int[] arr = {5, 9, 6, 3, 7, 7, 7, 1, 8, 16, 0};
-        QiuckSort.sort(arr, 0, arr.length - 1);
+        ShellSort.sort(arr);
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + "\t");
         }
-
     }
 
     private static void testBucketSort() {

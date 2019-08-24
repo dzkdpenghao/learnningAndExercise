@@ -86,18 +86,18 @@ public class TestClass {
 
         System.out.println(heap);
 
-        heap.deleMin();
-        System.out.println(heap);
-        heap.deleMin();
-        System.out.println(heap);
-        heap.deleMin();
-        System.out.println(heap);
-        heap.deleMin();
-        System.out.println(heap);
-        heap.deleMin();
-        System.out.println(heap);
-        heap.deleMin();
-        System.out.println(heap);
+//        heap.deleMin();
+//        System.out.println(heap);
+//        heap.deleMin();
+//        System.out.println(heap);
+//        heap.deleMin();
+//        System.out.println(heap);
+//        heap.deleMin();
+//        System.out.println(heap);
+//        heap.deleMin();
+//        System.out.println(heap);
+//        heap.deleMin();
+//        System.out.println(heap);
     }
 
     private static void testRemove(TreeNode root) {

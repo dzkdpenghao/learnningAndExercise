@@ -23,7 +23,7 @@ public class TestClass {
         //testInsert(root);
         //testRemove(root);
 
-        //testHeap();
+        testHeap();
 
         //testBubbleSort();
 
@@ -79,12 +79,11 @@ public class TestClass {
 
     private static void testHeap() {
         Heap heap = new Heap();
-        heap.insert(4);
-        heap.insert(5);
-        heap.insert(2);
-        heap.insert(1);
-        heap.insert(3);
-        heap.insert(6);
+        int[] arr={51,32,73,23,42,62,99,14,24,3943,58,65,80,120};
+        for(int i:arr){
+            heap.insert(i);
+        }
+
         System.out.println(heap);
 
         heap.deleMin();

@@ -4,7 +4,7 @@
  * Date:     2020/9/29 19:04
  * Description: 演示锁以及线程间通信
  */
-package demo.thread.lock;
+package lock;
 
 public class LockDemoClass {
 

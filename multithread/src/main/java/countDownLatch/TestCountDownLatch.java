@@ -3,7 +3,7 @@
  * Date:     2020/9/30 17:23
  * Description: 演示CountDownLatch
  */
-package demo.thread.countDownLatch;
+package countDownLatch;
 
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;

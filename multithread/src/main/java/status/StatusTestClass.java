@@ -3,7 +3,7 @@
  * Date:     2020/9/29 17:18
  * Description: blocked测试
  */
-package demo.thread.status;
+package status;
 
 public class StatusTestClass {
     public static void main(String[] args) throws InterruptedException {

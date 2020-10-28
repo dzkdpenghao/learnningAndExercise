@@ -12,10 +12,11 @@ import java.nio.channels.CompletionHandler;
 public class AcceptCompletionHandler implements CompletionHandler<AsynchronousSocketChannel, AsyncTimeServerHandler> {
 
     @Override
-    public void completed(AsynchronousSocketChannel result, AsyncTimeServerHandler attachment) {
-        attachment.asynchronousServerSocketChannel.accept(attachment,this);
+    public void completed(AsynchronousSocketChannel channel, AsyncTimeServerHandler handler) {
+        //循环调用accept()，继续异步接收其他客户端
+        handler.asynchronousServerSocketChannel.accept(handler,this);
         ByteBuffer rb=ByteBuffer.allocate(1024);
-        result.read(rb,rb,new ReadCompletionHandler(result));
+        channel.read(rb,rb,new ReadCompletionHandler(channel));
     }
 
     @Override

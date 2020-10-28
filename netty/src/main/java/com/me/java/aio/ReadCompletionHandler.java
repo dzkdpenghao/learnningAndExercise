@@ -5,11 +5,8 @@
  */
 package com.me.java.aio;
 
-import jdk.internal.org.objectweb.asm.util.CheckAnnotationAdapter;
-
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
-import java.io.WriteAbortedException;
 import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
@@ -42,10 +39,10 @@ public class ReadCompletionHandler implements CompletionHandler<Integer, ByteBuf
         }
     }
 
-    private void doWrite(String currentTime) {
-        if (currentTime != null && currentTime.trim().length() > 0) {
-            byte[] bytes = currentTime.getBytes();
-            ByteBuffer wb = ByteBuffer.allocate(bytes.length);
+    private void doWrite(String response) {
+        if (response != null && response.trim().length() > 0) {
+            byte[] bytes = response.getBytes();
+            final ByteBuffer wb = ByteBuffer.allocate(bytes.length);
             wb.put(bytes);
             wb.flip();
             channel.write(wb, wb,

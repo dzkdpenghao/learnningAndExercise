@@ -1,0 +1,8 @@
+logging:
+  path: ./log
+  file:
+    max-size: 10MB
+  level:
+    ##这里可以配置不同目录的日志级别
+    root: info
+    com.example.exceptionhandler.controller: warn

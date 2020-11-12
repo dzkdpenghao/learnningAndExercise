@@ -9,41 +9,6 @@ import java.util.*;
 
 public class ElevatorSchedulingAlgorithm {
 
-    //按从内到外的顺序排列的线程
-    public static TreeSet<PCB> outPCBs = new TreeSet<>(new Comparator<PCB>() {
-        @Override
-        public int compare(PCB o1, PCB o2) {
-            if (o1.getCiDaoNum() >= o2.getCiDaoNum()) {
-                if (o1.getCiDaoNum() == o2.getCiDaoNum()) {
-                    return 0;
-                }
-                return 1;
-            }
-            return -1;
-        }
-    });
-    //按从外向内的顺序排列的线程
-    public static TreeSet<PCB> inPCBs = new TreeSet<>(new Comparator<PCB>() {
-        @Override
-        public int compare(PCB o1, PCB o2) {
-            if (o1.getCiDaoNum() >= o2.getCiDaoNum()) {
-                if (o1.getCiDaoNum() == o2.getCiDaoNum()) {
-                    return 0;
-                }
-                return -1;
-            }
-            return 1;
-        }
-    });
-    public static Scanner sc = new Scanner(System.in);
-    public static Random random = new Random();
-    //当前所在磁道数
-    public static int currentCiDaoNum;
-    //当前请求磁盘IO的进程数
-    public static int count;
-    //当前磁道扫描方向
-    public static Boolean isOutDirection;
-
     public static void main(String[] args) {
         //初始化,设置一些初始值
         int originalCount = random.nextInt(5) + 5;
@@ -78,6 +43,40 @@ public class ElevatorSchedulingAlgorithm {
         }
     }
 
+    //按从内到外的顺序排列的请求线程
+    public static TreeSet<PCB> outPCBs = new TreeSet<>(new Comparator<PCB>() {
+        @Override
+        public int compare(PCB o1, PCB o2) {
+            if (o1.getCiDaoNum() >= o2.getCiDaoNum()) {
+                if (o1.getCiDaoNum() == o2.getCiDaoNum()) {
+                    return 0;
+                }
+                return 1;
+            }
+            return -1;
+        }
+    });
+    //按从外向内的顺序排列的请求线程
+    public static TreeSet<PCB> inPCBs = new TreeSet<>(new Comparator<PCB>() {
+        @Override
+        public int compare(PCB o1, PCB o2) {
+            if (o1.getCiDaoNum() >= o2.getCiDaoNum()) {
+                if (o1.getCiDaoNum() == o2.getCiDaoNum()) {
+                    return 0;
+                }
+                return -1;
+            }
+            return 1;
+        }
+    });
+    public static Scanner sc = new Scanner(System.in);
+    public static Random random = new Random();
+    //当前所在磁道数
+    public static int currentCiDaoNum;
+    //当前请求磁盘IO的进程数
+    public static int count;
+    //当前磁道扫描方向
+    public static Boolean isOutDirection;
 
     /**
      * 功能描述: 接受新的磁盘I/O请求
